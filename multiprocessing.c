@@ -21,7 +21,7 @@ int main() {
 
   if (pipe(pipeFDs) < 0) report_and_die("Erreur");
 
-  pid_t cpid = fork(); // Appelle système pour créer un child process 
+  pid_t cpid = fork(); // Appel système pour créer un child process 
   if (cpid < 0) report_and_die("Le child process n'a pas pu être crée");
 
   printf("CPID: %d\n", cpid);
