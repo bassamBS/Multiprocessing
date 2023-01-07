@@ -6,3 +6,5 @@
 #include <unistd.h>
 #include <string.h>
 
+#define ReadEnd 0
+#define WriteEnd 1
