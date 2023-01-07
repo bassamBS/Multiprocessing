@@ -6,3 +6,4 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 
+#define MaxWrite 256
