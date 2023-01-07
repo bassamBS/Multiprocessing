@@ -11,7 +11,7 @@
 int main() {
   srand(time(0)); // Générateur de nombre aléatoire
 
-  const char* fifoName = "./myPipel";
+  const char* fifoName = "./myPipe1";
   mkfifo(fifoName, 0666); // Lecture/Écriture pour user/group/others
   int fd = open(fifoName, O_CREAT |O_WRONLY); // Ouvre un bloc sur un FIFO
 
