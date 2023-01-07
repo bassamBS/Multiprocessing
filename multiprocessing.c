@@ -8,3 +8,9 @@
 
 #define ReadEnd 0
 #define WriteEnd 1
+
+void report_and_die(const char* msg) {
+  perror(msg);
+  exit(-1);
+}
+
