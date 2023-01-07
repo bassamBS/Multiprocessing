@@ -1,4 +1,4 @@
-/** Ce script est un exemple d'appel système pour créer du multiprocessing **/
+// Ce script est un exemple d'appel système pour créer du multiprocessing
 
 #include <sys/wait.h>
 #include <stdio.h>
@@ -9,6 +9,7 @@
 #define ReadEnd 0
 #define WriteEnd 1
 
+// Stop le programme en cas d'erreur
 void report_and_die(const char* msg) {
   perror(msg);
   exit(-1);
