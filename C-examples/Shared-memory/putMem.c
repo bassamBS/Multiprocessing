@@ -8,3 +8,8 @@
 #include <stdlib.h>
 #include <unistd.h> 
 
+void report_and_die(const char* msg) {
+  perror(msg); 
+  exit(-1);
+}
+
