@@ -19,7 +19,7 @@ char *setup(key_t key, int byte_count, int flags) {
 
   if (mem_id < 0) report_and_die("failed on shmget");
 
-  // Joint le segment de mémoire à la même adresse mémoire que script
+  // Joint le segment de mémoire à la même adresse mémoire que ce script
   char* mem_ptr = shmat(mem_id, 0, 0); // 0 signifie qu'on laisse l'OS choisir
   if (mem_ptr == (void*) - 1) report_and_die("failed_on_shmat");
   
