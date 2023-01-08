@@ -17,7 +17,7 @@ if (cluster.isPrimary) {
   http
     .createServer((req, res) => {
       res.writeHead(200);
-      res.end(`Echoeing request URI: " ${req.url} \n`);
+      res.end(`Echoeing request URI: "${req.url}" \n`);
     })
     .listen(port);
 }
