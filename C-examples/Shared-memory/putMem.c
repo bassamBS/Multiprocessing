@@ -13,7 +13,7 @@ void report_and_die(const char* msg) {
   exit(-1);
 }
 
-char *setup(key_t key, int byte_count, int flags) {
+char* setup(key_t key, int byte_count, int flags) {
   // Obtient la mémoire partagée et son identifiant
   int mem_id = shmget(key, byte_count, flags);
 
@@ -27,7 +27,7 @@ char *setup(key_t key, int byte_count, int flags) {
 }
 
 int main() {
-  const char* greeting = "Hello world!";
+  const char* greeting = "Hello, world!";
   int len = strlen(greeting) + 1;
   key_t key = 9876;
 
