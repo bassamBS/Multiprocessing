@@ -5,7 +5,7 @@
   "main": "nodeCluster.js",
   "type": "module",
   "scripts": {
-    "run": "node nodeCluster.js"
+    "cluster": "node cluster.js"
   },
   "keywords": [],
   "author": "",
