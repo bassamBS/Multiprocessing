@@ -15,7 +15,7 @@ void report_and_die(const char* msg) {
 
 char *setup(key_t key, int byte_count, int flags) {
   // Obtient la mémoire partagée et son identifiant
-  int mem_id = shmget(key, byte_count, flags);
+  int mem_id = shmat(key, byte_count, flags);
 
   if (mem_id < 0) report_and_die("failed on shmget");
 
