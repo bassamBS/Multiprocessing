@@ -1,0 +1,13 @@
+{
+  "name": "multiprocessing",
+  "version": "1.0.0",
+  "description": "Example of multiprocessing using NodeJS",
+  "main": "nodeCluster.js",
+  "type": "module",
+  "scripts": {
+    "run": "node nodeCluster.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
