@@ -19,7 +19,7 @@ char *setup(key_t key, int byte_count, int flags) {
 
   if (mem_id < 0) report_and_die("failed on shmget");
 
-  // Joint le segment de mémoire dans l'adresse mémoire de ce script
+  // Joint le segment de mémoire à la même adresse mémoire que script
   char* mem_ptr = shmat(mem_id, 0, 0); // 0 signifie qu'on laisse l'OS choisir
   if (mem_ptr == (void*) - 1) report_and_die("failed_on_shmat");
   
@@ -30,4 +30,14 @@ int main() {
   const char* greeting = "Hello world!";
   int len = strlen(greeting) + 1;
   key_t key = 9876;
+
+  char* mem_ptr = setup(key, len, IPC_CREAT | 0666);
+  memcpy(mem_ptr, greeting, len); // Copy le message dans le segment partagé
+
+  // On attend que l'autre processus accède à la mémoire partagée;
+  while (*mem_ptr == 'H') // l'autre processus modifiera le H en h
+    sleep(1);
+  printf("%s is new msg: putter is exiting...\n", mem_ptr);
+  return 0;
+
 }
